@@ -1,0 +1,21 @@
+const body = document.body;
+const questionText = "Чи приїду я завтра на пари?";
+const answers = ["Так", "Ні", "Мабуть"];
+const container = document.createElement('div');
+container.id = 'container';
+const magicBall = document.createElement('div');
+magicBall.id = 'magic-ball';
+const question = document.createElement('div');
+question.id = 'question';
+question.innerText = questionText;
+const answer = document.createElement('div');
+answer.id = 'answer';
+answer.innerText = '';
+body.appendChild(container);
+container.appendChild(question);
+container.appendChild(magicBall);
+magicBall.appendChild(answer);
+magicBall.addEventListener('click', () => {
+    const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+    answer.innerText = randomAnswer;
+});
